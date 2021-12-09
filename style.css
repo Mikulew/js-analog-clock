@@ -2,10 +2,9 @@
   --yangColor: #d8c21e;
   --yinColor: #111111;
   --backgroundColor: #242424;
-  --shadow: 3px 3px 3px rgba(0, 0, 0, .8),
-            -3px -3px 3px rgb(216, 194, 30, 1);
-  --shadowInset: inset 3px 3px 3px rgba(0, 0, 0, .8),
-                inset -3px -3px 3px rgb(216, 194, 30, 1);
+  --shadow: 3px 3px 3px rgba(0, 0, 0, 0.8), -3px -3px 3px rgb(216, 194, 30, 1);
+  --shadowInset: inset 3px 3px 3px rgba(0, 0, 0, 0.8),
+    inset -3px -3px 3px rgb(216, 194, 30, 1);
 }
 
 html {
@@ -15,7 +14,9 @@ html {
   background: var(--yinColor);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   font-size: inherit;
   font-family: inherit;
   box-sizing: inherit;
@@ -29,135 +30,144 @@ html {
   place-items: center;
   height: 100vh;
   width: 100%;
+  overflow: hidden;
 }
 
 .clock {
-  border: 4px solid var(--backgroundColor);
   border-radius: 50%;
   width: 320px;
   height: 320px;
-  margin: auto;
-  box-shadow: 0 -15px 15px rgba(255, 255, 255, .05),
-              inset 0 -15px 15px rgba(255, 255, 255, .05),
-              0 15px 15px rgba(216, 194, 30, .3),
-              inset 0 15px 15px rgba(216, 194, 30, .3);
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+    inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+    0 15px 15px rgba(216, 194, 30, 0.3),
+    inset 0 15px 15px rgba(216, 194, 30, 0.3);
+}
+
+.outer-clock-face {
+  position: relative;
+  margin: inherit;
+  padding: inherit;
+  width: inherit;
+  height: inherit;
 }
 
 .hours-wrapper {
-  position: relative;
+  position: absolute;
   font-size: 20px;
   letter-spacing: -2px;
   line-height: 40px;
+  left: calc(50% - 10px);
+  color: var(--yangColor);
   list-style: none;
-  top: 0;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  left: 115px;
 }
 
 .hour {
   position: absolute;
+  transform-origin: 10% 100%;
   display: block;
-  color: var(--yangColor);
-  transform-origin: 50% 100%;
   height: 160px;
-  width: 80px;
+  width: 55px;
 }
 
-.hours-wrapper .hour:nth-of-type(1) {
+.hour .number {
+  display: inline-block;
+}
+
+.hour:nth-of-type(1) {
   transform: rotate(30deg);
 }
 
-.hours-wrapper .hour:nth-of-type(1) span {
+.hour:nth-of-type(1) .number {
   transform: rotate(-30deg);
 }
 
-.hours-wrapper .hour:nth-of-type(2) {
+.hour:nth-of-type(2) {
   transform: rotate(60deg);
 }
 
-.hours-wrapper .hour:nth-of-type(2) span {
+.hour:nth-of-type(2) .number {
   transform: rotate(-60deg);
 }
 
-.hours-wrapper .hour:nth-of-type(3) {
+.hour:nth-of-type(3) {
   transform: rotate(90deg);
 }
 
-.hours-wrapper .hour:nth-of-type(3) span {
+.hour:nth-of-type(3) .number {
   transform: rotate(-90deg);
 }
 
-.hours-wrapper .hour:nth-of-type(4) {
+.hour:nth-of-type(4) {
   transform: rotate(120deg);
 }
 
-.hours-wrapper .hour:nth-of-type(4) span {
+.hour:nth-of-type(4) .number {
   transform: rotate(-120deg);
 }
 
-.hours-wrapper .hour:nth-of-type(5) {
+.hour:nth-of-type(5) {
   transform: rotate(150deg);
 }
 
-.hours-wrapper .hour:nth-of-type(5) span {
+.hour:nth-of-type(5) .number {
   transform: rotate(-150deg);
 }
 
-.hours-wrapper .hour:nth-of-type(6) {
+.hour:nth-of-type(6) {
   transform: rotate(180deg);
 }
 
-.hours-wrapper .hour:nth-of-type(6) span {
+.hour:nth-of-type(6) .number {
   transform: rotate(-180deg);
 }
 
-.hours-wrapper .hour:nth-of-type(7) {
+.hour:nth-of-type(7) {
   transform: rotate(210deg);
 }
 
-.hours-wrapper .hour:nth-of-type(7) span {
+.hour:nth-of-type(7) .number {
   transform: rotate(-210deg);
 }
 
-.hours-wrapper .hour:nth-of-type(8) {
+.hour:nth-of-type(8) {
   transform: rotate(240deg);
 }
 
-.hours-wrapper .hour:nth-of-type(8) span {
+.hour:nth-of-type(8) .number {
   transform: rotate(-240deg);
 }
 
-.hours-wrapper .hour:nth-of-type(9) {
+.hour:nth-of-type(9) {
   transform: rotate(270deg);
 }
 
-.hours-wrapper .hour:nth-of-type(9) span {
+.hour:nth-of-type(9) .number {
   transform: rotate(-270deg);
 }
 
-.hours-wrapper .hour:nth-of-type(10) {
+.hour:nth-of-type(10) {
   transform: rotate(300deg);
 }
 
-.hours-wrapper .hour:nth-of-type(10) span {
+.hour:nth-of-type(10) .number {
   transform: rotate(-300deg);
 }
 
-.hours-wrapper .hour:nth-of-type(11) {
+.hour:nth-of-type(11) {
   transform: rotate(330deg);
 }
 
-.hours-wrapper .hour:nth-of-type(11) span {
+.hour:nth-of-type(11) .number {
   transform: rotate(-330deg);
 }
 
-.hours-wrapper .hour:nth-of-type(12) {
+.hour:nth-of-type(12) {
   transform: rotate(360deg);
 }
 
-.hours-wrapper .hour:nth-of-type(12) span {
+.hour:nth-of-type(12) .number {
   transform: rotate(-360deg);
 }
 
@@ -173,26 +183,6 @@ html {
   transform-origin: 50% 100%;
 }
 
-.hour {
-  background: #222;
-  left: 152px;
-  width: 13px;
-  height: 105px;
-  border-radius: 10px;
-  animation: rotateHand 43200s linear infinite;
-}
-
-.hour:after {
-  background: #222;
-  border-radius: 50%;
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: -8px;
-  width: 13px;
-  height: 16px;
-}
-
 .minute {
   background: #222;
   left: 155px;
@@ -205,7 +195,7 @@ html {
 .minute:after {
   background: #222;
   border-radius: 50%;
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   bottom: -8px;
@@ -214,7 +204,7 @@ html {
 }
 
 .second {
-  background: var(--yangColor);;
+  background: var(--yangColor);
   left: 156.5px;
   width: 5px;
   height: 132px;
@@ -224,7 +214,7 @@ html {
 
 .second:after {
   position: absolute;
-  content: "";
+  content: '';
   display: block;
   background: var(--yangColor);
   border-radius: 50%;
