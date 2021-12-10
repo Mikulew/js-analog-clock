@@ -171,10 +171,11 @@ html {
   transform: rotate(-360deg);
 }
 
-.hand-wrapper {
+.inner-clock-face {
   position: absolute;
-  width: 320px;
-  height: 320px;
+  top: 27%;
+  width: inherit;
+  height: inherit;
 }
 
 .hand {
@@ -183,48 +184,55 @@ html {
   transform-origin: 50% 100%;
 }
 
-.minute {
+.hand.hour {
+  background: #222;
+  left: 152px;
+  width: 13px;
+  height: 105px;
+  border-radius: 10px;
+}
+
+.hand.hour::after {
+  position: absolute;
+  content: "";
+  display: block;
+  border-radius: 50%;
+}
+
+.hand.hour::after {
+  background: #222;
+  bottom: -8px;
+  width: 13px;
+  height: 16px;
+}
+
+.hand.minute {
   background: #222;
   left: 155px;
   width: 9px;
   height: 125px;
   border-radius: 8px;
-  animation: rotateHand 3600s linear infinite;
 }
 
-.minute:after {
+.hand.minute::after {
   background: #222;
-  border-radius: 50%;
-  content: '';
-  display: block;
-  position: absolute;
   bottom: -8px;
   width: 9px;
   height: 16px;
 }
 
-.second {
+.hand.second {
   background: var(--yangColor);
   left: 156.5px;
   width: 5px;
   height: 132px;
   border-radius: 8px;
-  animation: rotateHand 60s linear infinite;
 }
 
-.second:after {
-  position: absolute;
-  content: '';
-  display: block;
+.hand.second::after {
   background: var(--yangColor);
-  border-radius: 50%;
   bottom: -3.5px;
   width: 5px;
   height: 7px;
 }
 
-@keyframes rotateHand {
-  to {
-    transform: rotate(1turn);
-  }
-}
