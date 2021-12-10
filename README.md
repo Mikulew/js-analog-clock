@@ -19,12 +19,13 @@
 
 ## Demo
 
-WIP
+- [see here](https://mikulew.github.io/js-analog-clock/)
 
 ## Resources
 
 - [Wikipedia: Clock face](https://en.wikipedia.org/wiki/Clock_face)
 - [Foolish Developer: Make an Analog Clock using HTML, CSS and JavaScript](https://www.foolishdeveloper.com/2021/06/make-analog-clock-using-html-css-and.html)
+- [Foolish Developer: Create an Analog Clock using HTML, CSS and JavaScript](https://www.foolishdeveloper.com/2021/06/create-analog-clock-using-html-css-and.html)
 - [dev.to: Simple Analog Clock Using Html, CSS & Javascript](https://dev.to/code_mystery/simple-analog-clock-using-html-css-javascript-2c6a)
 - [Coding Artist: Analog Clock | HTML, CSS & Javascript Tutorial](https://www.youtube.com/watch?v=seZf0-3DspQ)
 - [CodeWtihHarry: I Created an Analog Clock Using Pure HTML, CSS and JavaScript](https://www.youtube.com/watch?v=9DxdE__m_LA)
